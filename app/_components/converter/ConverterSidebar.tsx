@@ -2,10 +2,10 @@ import {
   FileText,
   History,
   LayoutDashboard,
-  Settings,
   RefreshCw,
-  Home,
   FileStack,
+  LucideHome,
+  Calendar,
 } from "lucide-react";
 
 import {
@@ -21,6 +21,11 @@ import {
 import Link from "next/link";
 
 const items = [
+  {
+    title: "Home",
+    url: "/",
+    icon: LucideHome,
+  },
   {
     title: "Dashboard",
     url: "/converter",
@@ -49,7 +54,7 @@ const items = [
   {
     title: "Shortener",
     url: "/shortener",
-    icon: Home,
+    icon: Calendar,
   },
 ];
 

@@ -1,4 +1,3 @@
-// lib/shortener/generator.ts
 import { encodeBase62 } from "./base62";
 import { prisma } from "@/lib/prisma";
 

@@ -15,7 +15,12 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-const COLORS = ["var(--chart-1)", "var(--chart-2)", "var(--chart-3)", "var(--chart-4)"];
+const COLORS = [
+  "var(--chart-1)",
+  "var(--chart-2)",
+  "var(--chart-3)",
+  "var(--chart-4)",
+];
 
 interface ConversionPieChartProps {
   data: { type: string; count: number }[];
@@ -51,7 +56,10 @@ export function ConversionPieChart({ data }: ConversionPieChartProps) {
                 paddingAngle={5}
               >
                 {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
                 ))}
               </Pie>
               <ChartTooltip content={<ChartTooltipContent />} />

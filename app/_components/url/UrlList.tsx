@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Copy, Link2, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { DeleteDialog } from "./DeleteDialog"; // import our dialog
+import { DeleteDialog } from "./DeleteDialog";
 import { getUrlStatus } from "@/utils/utils";
 
 type ShortUrl = {
@@ -106,7 +106,6 @@ export default function UrlList({ urls }: UrlListClientProps) {
         ))}
       </div>
 
-      {/* Delete Dialog */}
       <DeleteDialog
         urlId={deletingUrlId}
         onClose={() => setDeletingUrlId(null)}

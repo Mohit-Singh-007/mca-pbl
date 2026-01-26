@@ -13,7 +13,7 @@ export default async function Page({
     where: { code },
   });
   if (!url) {
-    return <p>Short URL not found</p>; // Or redirect to a 404 page
+    return <p>Short URL not found</p>;
   }
   if (url.expiresAt && url.expiresAt < new Date()) {
     return <ExpiredUrlPage originalUrl={url.longUrl} />;

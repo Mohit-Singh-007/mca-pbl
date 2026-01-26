@@ -26,8 +26,8 @@ export default function DeleteConversionButton({ id }: { id: string }) {
       try {
         await deleteConversion(id);
         toast.success("Deleted successfully!");
-      } catch (error: any) {
-        toast.error(error.message || "Failed to delete");
+      } catch {
+        toast.error("Failed to delete...");
       }
     });
   };
@@ -48,7 +48,8 @@ export default function DeleteConversionButton({ id }: { id: string }) {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete the conversion record and its associated physical files from your local storage.
+            This will permanently delete the conversion record and its
+            associated physical files from your local storage.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

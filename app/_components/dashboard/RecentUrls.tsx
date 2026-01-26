@@ -1,6 +1,5 @@
 import getRecentUrls from "@/app/data/url/getRecentUrls";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
 
 export default async function RecentUrls() {
   const urls = await getRecentUrls();
@@ -16,12 +15,15 @@ export default async function RecentUrls() {
             <p className="text-sm text-muted-foreground">No URLs found.</p>
           ) : (
             urls.map((url) => (
-              <div key={url.id} className="flex items-center justify-between border-b pb-2 last:border-0">
+              <div
+                key={url.id}
+                className="flex items-center justify-between border-b pb-2 last:border-0"
+              >
                 <div className="flex flex-col">
-                  <span className="font-medium text-sm truncate max-w-[200px]">
+                  <span className="font-medium text-sm truncate max-w-50">
                     {url.alias || url.code}
                   </span>
-                  <span className="text-xs text-muted-foreground truncate max-w-[200px]">
+                  <span className="text-xs text-muted-foreground truncate max-w-50">
                     {url.longUrl}
                   </span>
                 </div>

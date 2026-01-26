@@ -11,7 +11,11 @@ import { execFile } from "child_process";
 const LIBRE_OFFICE_PATH = "C:/Program Files/LibreOffice/program/soffice.exe";
 const LIBRE_PROFILE_DIR = "D:/dsa_storage/libre_profile";
 
-async function convertWithLibre(buffer: Buffer, format: string, fileName: string): Promise<Buffer> {
+async function convertWithLibre(
+  buffer: Buffer,
+  format: string,
+  fileName: string,
+): Promise<Buffer> {
   const fileId = Math.random().toString(36).substring(7);
   const tempInDir = path.join("D:/dsa_storage/tmp", fileId);
   const tempOutDir = path.join("D:/dsa_storage/tmp", `${fileId}_out`);
@@ -24,7 +28,6 @@ async function convertWithLibre(buffer: Buffer, format: string, fileName: string
     await fs.writeFile(inputPath, buffer);
 
     return new Promise((resolve, reject) => {
-      // Use direct CLI flags for maximum compatibility on Windows
       const args = [
         `-env:UserInstallation=file:///${LIBRE_PROFILE_DIR.replace(/\\/g, "/")}`,
         "--headless",
@@ -38,20 +41,26 @@ async function convertWithLibre(buffer: Buffer, format: string, fileName: string
       execFile(LIBRE_OFFICE_PATH, args, async (error, stdout, stderr) => {
         if (error) {
           console.error("LibreOffice Error:", stderr);
-          return reject(new Error(`LibreOffice failed: ${stderr || error.message}`));
+          return reject(
+            new Error(`LibreOffice failed: ${stderr || error.message}`),
+          );
         }
 
         try {
           // LibreOffice names the output file based on the input filename
           const baseName = path.basename(fileName, path.extname(fileName));
           const resultPath = path.join(tempOutDir, `${baseName}.${format}`);
-          
+
           const resultBuffer = await fs.readFile(resultPath);
-          
+
           // Cleanup
-          await fs.rm(tempInDir, { recursive: true, force: true }).catch(() => {});
-          await fs.rm(tempOutDir, { recursive: true, force: true }).catch(() => {});
-          
+          await fs
+            .rm(tempInDir, { recursive: true, force: true })
+            .catch(() => {});
+          await fs
+            .rm(tempOutDir, { recursive: true, force: true })
+            .catch(() => {});
+
           resolve(resultBuffer);
         } catch (readError) {
           reject(new Error("Failed to read converted file."));
@@ -81,7 +90,9 @@ export async function convertFile(formData: FormData) {
   const originalPath = path.join(UPLOAD_DIR, `${fileId}${originalExtension}`);
 
   // Create log entry
-  const isImage = [".png", ".jpg", ".jpeg", ".webp"].includes(originalExtension);
+  const isImage = [".png", ".jpg", ".jpeg", ".webp"].includes(
+    originalExtension,
+  );
   const category = isImage ? "IMAGE" : "DOCUMENT";
 
   const log = await prisma.conversionLog.create({
@@ -138,9 +149,16 @@ export async function convertFile(formData: FormData) {
       await fs.writeFile(convertedPath, pdfBytes);
     } else if (
       targetType === "PDF" &&
-      [".docx", ".doc", ".ppt", ".pptx", ".xls", ".xlsx", ".rtf", ".txt"].includes(
-        originalExtension,
-      )
+      [
+        ".docx",
+        ".doc",
+        ".ppt",
+        ".pptx",
+        ".xls",
+        ".xlsx",
+        ".rtf",
+        ".txt",
+      ].includes(originalExtension)
     ) {
       outputFileName = `${fileId}.pdf`;
       convertedPath = path.join(CONVERTED_DIR, outputFileName);
@@ -180,7 +198,8 @@ export async function convertFile(formData: FormData) {
 
 export async function mergePdfs(formData: FormData) {
   const files = formData.getAll("files") as File[];
-  if (!files || files.length < 2) throw new Error("Select at least 2 PDF files to merge");
+  if (!files || files.length < 2)
+    throw new Error("Select at least 2 PDF files to merge");
 
   const startTime = Date.now();
   const fileId = Math.random().toString(36).substring(7);
@@ -200,9 +219,9 @@ export async function mergePdfs(formData: FormData) {
 
   try {
     await fs.mkdir(CONVERTED_DIR, { recursive: true });
-    
+
     const mergedPdf = await PDFDocument.create();
-    
+
     for (const file of files) {
       const buffer = Buffer.from(await file.arrayBuffer());
       const pdf = await PDFDocument.load(buffer);

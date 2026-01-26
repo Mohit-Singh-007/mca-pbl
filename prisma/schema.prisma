@@ -30,16 +30,16 @@ model ShortUrl {
 
 model ConversionLog {
   id            String   @id @default(cuid())
-  originalName  String // e.g., "resume.pdf"
-  originalPath  String // Local path on your PC
-  convertedPath String? // Local path to the result
-  type          String // e.g., "PDF_TO_IMG", "IMG_TO_WEBP"
+  originalName  String 
+  originalPath  String 
+  convertedPath String?
+  type          String 
   category      Category @default(DOCUMENT)
-  fileSize      Int // In bytes
+  fileSize      Int
   status        Status   @default(PENDING)
   durationMs    Int?
   error         String?
-  userId        String? // Optional for now
+  userId        String?
   createdAt     DateTime @default(now())
 }
 
