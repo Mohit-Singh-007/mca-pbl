@@ -1,0 +1,57 @@
+
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UrlStatus {
+  ACTIVE
+  EXPIRED
+}
+
+
+model ShortUrl {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  longUrl   String
+  userId    String?
+  clicks    Int       @default(0)
+  createdAt DateTime  @default(now())
+  expiresAt DateTime?
+  alias     String?
+  status    UrlStatus @default(ACTIVE)
+}
+
+model ConversionLog {
+  id            String   @id @default(cuid())
+  originalName  String // e.g., "resume.pdf"
+  originalPath  String // Local path on your PC
+  convertedPath String? // Local path to the result
+  type          String // e.g., "PDF_TO_IMG", "IMG_TO_WEBP"
+  category      Category @default(DOCUMENT)
+  fileSize      Int // In bytes
+  status        Status   @default(PENDING)
+  durationMs    Int?
+  error         String?
+  userId        String? // Optional for now
+  createdAt     DateTime @default(now())
+}
+
+enum Category {
+  IMAGE
+  DOCUMENT
+  PDF_MERGE
+}
+
+enum Status {
+  PENDING
+  COMPLETED
+  FAILED
+}
+
