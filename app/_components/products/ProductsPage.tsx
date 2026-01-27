@@ -5,6 +5,9 @@ import ProductGrid from "./ProductGrid";
 import FilterSidebar from "./FilterSidebar";
 import SearchBar from "./SearchBar";
 import Pagination from "./Pagination";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
 const API_BASE_URL = "http://localhost:8080/api/products";
 interface Product {
   id: number;
@@ -102,6 +105,9 @@ export default function ProductsPage() {
             initialQuery={searchParams.get("query") || ""}
             onSearch={(query) => updateURL({ query })}
           />
+          <Link href={"/"} className={buttonVariants()}>
+            <ArrowLeft className="size-4 mr-1" /> Go Back
+          </Link>
         </div>
         <div className="flex gap-8">
           <aside className="w-64 shrink-0">

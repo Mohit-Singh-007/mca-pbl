@@ -17,7 +17,7 @@ import {
 
 const chartConfig = {
   count: {
-    label: "Files Converted",
+    label: "Files Converted ",
     color: "var(--chart-2)",
   },
 } satisfies ChartConfig;
