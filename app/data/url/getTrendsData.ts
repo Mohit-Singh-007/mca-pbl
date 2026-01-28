@@ -2,14 +2,14 @@ import { prisma } from "@/lib/prisma";
 
 export default async function getTrendsData() {
   const now = new Date();
-  const sevenDaysAgo = new Date();
-  sevenDaysAgo.setDate(now.getDate() - 7);
-  sevenDaysAgo.setHours(0, 0, 0, 0);
+  const startDate = new Date();
+  startDate.setDate(now.getDate() - 6);
+  startDate.setHours(0, 0, 0, 0);
 
   const urls = await prisma.shortUrl.findMany({
     where: {
       createdAt: {
-        gte: sevenDaysAgo,
+        gte: startDate,
       },
     },
     select: {

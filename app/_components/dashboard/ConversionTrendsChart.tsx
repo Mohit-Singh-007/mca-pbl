@@ -53,6 +53,7 @@ export function ConversionTrendsChart({ data }: ConversionTrendsChartProps) {
               axisLine={false}
               tickMargin={12}
               className="text-[10px] md:text-xs"
+              allowDecimals={false}
             />
             <ChartTooltip
               cursor={false}
@@ -74,11 +75,12 @@ export function ConversionTrendsChart({ data }: ConversionTrendsChartProps) {
             </defs>
             <Area
               dataKey="count"
-              type="natural"
+              type="monotone"
               fill="url(#fillConvCount)"
               fillOpacity={0.4}
               stroke="var(--color-count)"
               strokeWidth={2}
+              dot={false}
             />
           </AreaChart>
         </ChartContainer>

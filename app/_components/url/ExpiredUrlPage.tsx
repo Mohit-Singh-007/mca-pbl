@@ -25,9 +25,9 @@ export default function ExpiredUrlPage({ originalUrl }: ExpiredUrlPageProps) {
             </>
           )}
         </p>
-        <Link href="/" passHref>
+        <Link href="/shortener/urls" passHref>
           <Button variant="default" className="w-full">
-            <ArrowLeft className="size-4 mr-1" /> Go to Home
+            <ArrowLeft className="size-4 mr-1" /> Go Back
           </Button>
         </Link>
       </div>

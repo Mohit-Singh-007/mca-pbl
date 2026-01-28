@@ -38,37 +38,42 @@ export default function UrlForm({ onSuccess }: UrlFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full p-6">
-      <Label>Long URL</Label>
-      <Input
-        type="url"
-        value={longUrl}
-        onChange={(e) => setLongUrl(e.target.value)}
-        required
-        className="input"
-      />
+      <div className="space-y-1">
+        <Label>Long URL</Label>
+        <Input
+          type="url"
+          value={longUrl}
+          onChange={(e) => setLongUrl(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
 
-      <Label>Alias (optional)</Label>
-      <Input
-        type="text"
-        value={alias}
-        onChange={(e) => setAlias(e.target.value)}
-        className="input"
-      />
+      <div className="space-y-1">
+        <Label>Alias (optional)</Label>
+        <Input
+          type="text"
+          value={alias}
+          onChange={(e) => setAlias(e.target.value)}
+          className="input"
+        />
+      </div>
 
-      <Label>Expires At (optional)</Label>
-      <Input
-        type="date"
-        value={expiresAt}
-        onChange={(e) => setExpiresAt(e.target.value)}
-        className="input"
-      />
+      <div className="space-y-1">
+        <Label>Expires At (optional)</Label>
+        <Input
+          type="date"
+          value={expiresAt}
+          onChange={(e) => setExpiresAt(e.target.value)}
+          className="input"
+        />
+      </div>
 
-      <Button type="submit" disabled={isPending}>
+      <Button type="submit" disabled={isPending} className="w-full">
         {isPending ? (
           "Creating..."
         ) : (
           <>
-            {" "}
             <PlusCircleIcon className="size-4 mr-1" />
             Create Short URL
           </>

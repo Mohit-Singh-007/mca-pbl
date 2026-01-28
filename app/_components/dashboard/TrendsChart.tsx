@@ -53,6 +53,7 @@ export function TrendsChart({ data }: TrendsChartProps) {
               axisLine={false}
               tickMargin={12}
               className="text-[10px] md:text-xs"
+              allowDecimals={false}
             />
             <ChartTooltip
               cursor={false}
@@ -74,12 +75,13 @@ export function TrendsChart({ data }: TrendsChartProps) {
             </defs>
             <Area
               dataKey="count"
-              type="natural"
+              type="monotone"
               fill="url(#fillCount)"
               fillOpacity={0.4}
               stroke="var(--color-count)"
               stackId="a"
               strokeWidth={2}
+              dot={false}
             />
           </AreaChart>
         </ChartContainer>

@@ -20,9 +20,15 @@ export default async function RecentUrls() {
                 className="flex items-center justify-between border-b pb-2 last:border-0"
               >
                 <div className="flex flex-col">
-                  <span className="font-medium text-sm truncate max-w-50">
+                  {/* <span className="">{url.alias || url.code}</span> */}
+                  <a
+                    href={`/s/${url.alias || url.code}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-sm truncate max-w-50 hover:underline"
+                  >
                     {url.alias || url.code}
-                  </span>
+                  </a>
                   <span className="text-xs text-muted-foreground truncate max-w-50">
                     {url.longUrl}
                   </span>
