@@ -33,8 +33,13 @@ export default function LandingPage() {
             </Link>
 
             <Button size="lg" variant="outline" className="text-lg h-12 px-8">
-              <Code2 className="mr-2 h-5 w-5" />
-              View Source Code
+              <Link
+                href={"https://github.com/Mohit-Singh-007/mca-pbl"}
+                className="flex items-center"
+              >
+                <Code2 className="mr-2 h-5 w-5" />
+                View Source Code
+              </Link>
             </Button>
           </div>
         </div>

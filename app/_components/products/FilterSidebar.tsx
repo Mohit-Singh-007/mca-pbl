@@ -213,12 +213,14 @@ export default function FilterSidebar({
               placeholder={currentFilters.minPrice || "Min price"}
               value={localMinPrice}
               onChange={(e) => setLocalMinPrice(e.target.value)}
+              min={0}
             />
             <Input
               type="number"
               placeholder={currentFilters.maxPrice || "Max price"}
               value={localMaxPrice}
               onChange={(e) => setLocalMaxPrice(e.target.value)}
+              min={0}
             />
             <Button onClick={handlePriceApply} className="w-full" size="sm">
               Apply Price Filter
