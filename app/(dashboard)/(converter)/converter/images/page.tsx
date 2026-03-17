@@ -8,7 +8,9 @@ export default function ImageConversionsPage() {
     <div className="p-4 space-y-8 pb-10">
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold tracking-tight">Image Conversions</h1>
+          <h1 className="text-3xl font-bold tracking-tight">
+            Image Conversions
+          </h1>
           <p className="text-muted-foreground">
             View and download all your image processing tasks.
           </p>
