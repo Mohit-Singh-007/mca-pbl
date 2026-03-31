@@ -148,23 +148,28 @@ This project solves both by combining practical utility with system design learn
 - Modular service design  
 
 ---
+## 📸 Screenshots
 
-## 📸 Screenshots  
+### Hero & About
+<p float="left">
+  <img src="./screenshots/hero.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/about.jpeg" width="400" style="border-radius: 8px;" />
+</p>
 
-> Add your screenshots inside a `/screenshots` folder
+### URL Shortener Module
+<p float="left">
+  <img src="./screenshots/url-dashboard.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/all-url.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/modal.jpeg" width="400" style="border-radius: 8px;" />
+</p>
 
-### Dashboard  
-![Dashboard](./screenshots/dashboard.png)
-
-### E-Commerce  
-![Ecommerce](./screenshots/ecommerce.png)
-
-### URL Shortener  
-![URL](./screenshots/url.png)
-
-### File Converter  
-![Converter](./screenshots/converter.png)
-
+### File & Image Converter Module
+<p float="left">
+  <img src="./screenshots/file-dashboard.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/file-modal.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/analytics-file.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/table.jpeg" width="400" style="border-radius: 8px;" />
+</p>
 ---
 
 ## 🔮 Future Scope  
