@@ -1,250 +1,219 @@
-# Modular Digital Platform – Project-Based Learning (PBL)
-
-## 📌 Project Overview
-
-This project is a **modular digital platform** that integrates multiple real-world systems into a single unified application. Instead of building isolated features, the focus is on **system integration, modular architecture, and real-world software design principles**.
-
-The platform is designed to simulate how large-scale applications are built — where multiple independent modules coexist in a single system and can later be scaled into independent services (microservices).
-
-This project is developed as part of **Project-Based Learning (PBL)** with a strong emphasis on:
-
-* System design
-* Integration
-* Modularity
-* Scalability
-* Data structures
-* Real-world workflows
+# 🚀 Modular Digital Platform  
+### A System Design–Focused Project-Based Learning (PBL) Application  
 
 ---
 
-## 🎯 Problem Domain
+## 📌 Overview  
+The **Modular Digital Platform** is a unified application that integrates multiple real-world utilities into a single system.
 
-Modern users depend on multiple platforms for:
+Unlike traditional projects that focus on isolated features, this platform is designed around:
 
-* File conversion
-* URL management
-* Digital utilities
-* Data processing tools
+- Modular architecture  
+- System integration  
+- Scalability  
+- Real-world software design  
 
-This creates:
-
-* Fragmented workflows
-* Data silos
-* Platform dependency
-
-Academically, most student projects focus on **isolated features** rather than **system-level integration**.
-
-This project addresses both:
-
-* A **practical gap** (fragmented utilities)
-* A **learning gap** (lack of system integration projects)
+It simulates how modern applications are built—where independent modules work together and can later evolve into microservices.
 
 ---
 
-## 💡 Project Objective
+## 🎯 Problem Statement  
 
-* Learn **integration of multiple modules** into a single system
-* Understand **real-world software architecture**
-* Apply **data structures and algorithms** used internally by systems
-* Practice **modular system design**
-* Prepare the system for **future microservice transformation**
+Users today depend on multiple platforms for:
+- File conversion  
+- URL shortening  
+- Product browsing  
+
+This leads to:
+- Fragmented workflows  
+- Platform switching  
+- Data silos  
+
+At the same time, most academic projects lack:
+- System-level thinking  
+- Integration of multiple services  
+
+This project solves both by combining practical utility with system design learning.
 
 ---
 
-## 🧩 Core Modules
+## 💡 Objectives  
 
-### 1. E-Commerce Module
+- Build a modular and scalable system  
+- Learn real-world architecture patterns  
+- Apply data structures in real systems  
+- Understand integration workflows  
+- Prepare for microservices architecture  
 
-* Advanced searching
-* Sorting
-* Filtering
-* Category-based browsing
-* Price range filtering
-* External mock product API integration
-* Data loaded into internal data structures
+---
+
+## 🧩 Core Modules  
+
+### 🛒 E-Commerce Module  
+**Features:**
+- Advanced search, sorting & filtering  
+- Category-based browsing  
+- Price range filtering  
+- External API integration  
 
 **Learning Focus:**
-
-* Data indexing
-* Searching algorithms
-* Sorting techniques
-* Filtering logic
-* Data structure optimization
+- Searching & sorting algorithms  
+- Data indexing  
+- Efficient data handling  
 
 ---
 
-### 2. URL Shortener Module
-
-* URL creation
-* Short URL generation
-* CRUD operations
-* Expiry-based URLs
-* Redirection system
-* Ownership-based access
+### 🔗 URL Shortener Module  
+**Features:**
+- Short URL generation  
+- CRUD operations  
+- Expiry-based links  
+- Redirection system  
+- Ownership-based access  
 
 **Learning Focus:**
-
-* Hashing
-* Unique key generation
-* HashMaps
-* Mapping structures
-* Expiry logic
-* Redirection systems
-* Access control concepts
+- Hashing & key generation  
+- HashMaps & mappings  
+- Access control logic  
 
 ---
 
-### 3. File & Image Converter Module
-
-* Document conversion
-* Image format conversion
-* Local storage
-* Conversion logs
-* File lifecycle management
+### 📁 File & Image Converter  
+**Features:**
+- Document & image conversion  
+- File storage & lifecycle management  
+- Conversion logs  
 
 **Learning Focus:**
-
-* File systems
-* Binary data handling
-* I/O streams
-* Storage management
-* Conversion pipelines
-* Logging systems
+- File systems & I/O streams  
+- Binary data processing  
+- Pipeline-based processing  
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Architecture  
 
-### Monolithic (Current Phase)
+### Current: Modular Monolithic  
+- Shared frontend  
+- Modular backend structure  
+- Central routing  
 
-* All modules integrated into a single platform
-* Shared UI layer
-* Modular backend structure
-* Independent internal services
-
-### Microservice (Future Phase)
-
-Each module can be separated into:
-
-* E-commerce Service
-* URL Management Service
-* File Conversion Service
-* Auth Service
-* API Gateway
+### Future: Microservices  
+- E-commerce Service  
+- URL Service  
+- File Service  
+- Auth Service  
+- API Gateway  
 
 ---
 
-## 🧠 Data Structures Used
+## 🧠 Data Structures Used  
 
-* HashMap → URL mapping, caching
-* Set → Unique product filtering
-* Binary Search Tree → Sorted data storage
-* Heap → Priority-based sorting
-* Arrays/Lists → Product collections
-* Queues → Conversion pipelines
-* Trees → Category structures
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-
-* Next.js
-* React
-* Tailwind CSS
-
-### Backend
-
-* Spring Boot (E-commerce module)
-* Next.js API Routes / Server Actions (URL + File modules)
-
-### Database
-
-* PostgreSQL
-
-### Tools
-
-* Prisma ORM
-* GitHub
-* REST APIs
-* Local Storage Systems
+- HashMap → URL mapping, caching  
+- Set → Unique filtering  
+- Binary Search Tree → Sorted data  
+- Heap → Priority sorting  
+- Arrays/Lists → Collections  
+- Queue → Processing pipelines  
+- Tree Structures → Category hierarchy  
 
 ---
 
-## 🔗 Integration Strategy
+## 🛠️ Tech Stack  
 
-* Independent modules
-* Shared UI/UX
-* Central routing
-* Modular services
-* Common data flow
-* Unified platform architecture
+### Frontend  
+- Next.js  
+- React  
+- Tailwind CSS  
 
----
+### Backend  
+- Spring Boot (E-commerce)  
+- Next.js API Routes (URL + File modules)  
 
-## 🔮 Future Scope
+### Database  
+- PostgreSQL  
 
-* Authentication & Authorization
-* Role-based access control
-* Cloud storage integration
-* Distributed file systems
-* Microservice architecture
-* API Gateway
-* Message queues
-* Caching systems
-* Containerization (Docker)
-* Deployment pipelines
-* Monitoring & logging
+### Tools  
+- Prisma ORM  
+- GitHub  
+- REST APIs  
 
 ---
 
-## 👥 Team Structure (Example)
+## 🔗 Integration Strategy  
 
-### Developer 1 (System Architect)
+- Independent modules with shared UI  
+- Central routing system  
+- Unified data flow  
+- Modular service design  
 
-* Integration
-* Backend design
-* Microservice planning
-* System architecture
+---
+## 📸 Screenshots
 
-### Developer 2 (Frontend Engineer)
+### Hero & About
+<p float="left">
+  <img src="./screenshots/hero.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/about.jpeg" width="400" style="border-radius: 8px;" />
+</p>
 
-* UI/UX
-* Dashboard
-* Component design
-* User interaction
+### URL Shortener Module
+<p float="left">
+  <img src="./screenshots/url-dashboard.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/all-url.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/modal.jpeg" width="400" style="border-radius: 8px;" />
+</p>
 
-### Developer 3 (Backend Engineer)
+### File & Image Converter Module
+<p float="left">
+  <img src="./screenshots/file-dashboard.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/file-modal.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/analytics-file.jpeg" width="400" style="margin-right: 10px; border-radius: 8px;" />
+  <img src="./screenshots/table.jpeg" width="400" style="border-radius: 8px;" />
+</p>
+---
 
-* URL module
-* File module
-* Data handling
-* API logic
+## 🔮 Future Scope  
+
+- Authentication & Authorization  
+- Role-Based Access Control  
+- Cloud Storage Integration  
+- Microservices architecture  
+- API Gateway  
+- Message queues  
+- Caching systems  
+- Docker & deployment pipelines  
+- Monitoring & logging  
 
 ---
 
-## 📚 Learning Outcomes
+## 👥 Team  
 
-* Real-world system thinking
-* Software architecture design
-* Modular development
-* Integration workflows
-* Data structure application
-* Scalable system design
-* Team-based development
+| Name | Role | Responsibility | 
+|------|------|--------------|
+| Aditya Joshi | UI/UX Designer | Designed application UI in Figma, created wireframes, and defined user experience flows |
+| Simran Dalakoti | Frontend Engineer | Built responsive UI components, implemented designs, and handled frontend-backend API integration |
+| Mohit Singh | System Architect | Designed system architecture, handled backend structure, and managed module integration |
+
+
+---
+
+## 📚 Learning Outcomes  
+
+- System design thinking  
+- Modular development  
+- Real-world architecture  
+- Data structure implementation  
+- Scalable system design  
+- Team collaboration  
 
 ---
 
-## 🏁 Conclusion
+## 🏁 Conclusion  
 
-This project is not built as a feature-based application, but as a **learning platform for system design and integration**. The real value lies in how independent modules are combined, structured, and scaled — simulating real-world enterprise systems.
+This project focuses on how systems are built, not just features.
 
-It serves as both:
-
-* A **practical digital platform**
-* An **academic system-learning project**
-
----
+It serves as:
+- A practical digital platform  
+- A system design learning project  
 
 > “This project is not about building tools — it’s about learning how systems are built.”
