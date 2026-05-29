@@ -55,7 +55,7 @@ export const useProducts = () => {
     size: searchParams.get("size") ? Number(searchParams.get("size")) : 10,
   };
 
-  // Helper to update URL with partial changes (merging with existing URL params)
+ 
   const setParams = (updates: Partial<FetchParams>) => {
     const current = new URLSearchParams(Array.from(searchParams.entries()));
 
@@ -73,7 +73,7 @@ export const useProducts = () => {
     router.push(`${pathname}${query}`);
   };
 
-  // 1. Enforce Default URL Params (Redirection)
+
   useEffect(() => {
     const current = new URLSearchParams(Array.from(searchParams.entries()));
     let needsUpdate = false;
@@ -97,7 +97,7 @@ export const useProducts = () => {
     const fetchProducts = async () => {
       setLoading(true);
 
-      // Construct API Query from URL Params directly
+     
       const apiParams = new URLSearchParams();
       if (params.query) apiParams.append("query", params.query);
       if (params.category) apiParams.append("category", params.category);
@@ -110,7 +110,7 @@ export const useProducts = () => {
       if (params.sortBy) apiParams.append("sortBy", params.sortBy);
       if (params.order) apiParams.append("order", params.order || "asc");
 
-      // Pagination - defaults handled in derivation but ensure sent
+      // Pagination
       apiParams.append("page", String(params.page || 1));
       apiParams.append("size", String(params.size || 10));
 
@@ -124,7 +124,6 @@ export const useProducts = () => {
         console.log("Response:", data);
 
         if (data.content && typeof data.totalElements === "number") {
-          // Verify page response structure
           setProducts(data.content);
           setTotal(data.totalElements);
         } else if (Array.isArray(data)) {

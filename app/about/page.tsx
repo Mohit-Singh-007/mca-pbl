@@ -58,7 +58,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-medium text-lg">Simran Dalakoti</h3>
                 <p className="text-xs text-muted-foreground">
-                  Full-Stack Engineer — UI, UX, Frontend
+                  Full-Stack Engineer — UI, UX, Database
                 </p>
               </div>
 
@@ -79,7 +79,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-medium text-lg">Aditya Joshi</h3>
                 <p className="text-xs text-muted-foreground">
-                  Full-Stack Engineer — Product, Logic, Systems
+                  Full-Stack Engineer — UI Designer, Frontend
                 </p>
               </div>
 
